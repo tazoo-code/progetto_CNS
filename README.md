@@ -17,5 +17,11 @@ We developed the tool using the following strategy:
 ### Image enhancement
 In order to improve the quality of the images, we compared three signal processing methods for image enhancement, addressing different image processing tasks.
 
-#### MAXIM
-  [Maxim enhancement](./models/enhancement_models/MAXIM_enhancement.ipynb)
+#### MAXIM enhancement ([source code](./models/enhancement_models/MAXIM_enhancement.ipynb))
+This method is specialized in low-light enhancement, which is able to enhance lighting while reducing the image noise. 
+
+#### Total variation denoising ([source code](./models/enhancement_models/Total_Variation_Denoising.ipynb))
+This technique reduces the total variation of the picture, facilitating the removal of unwanted details while minimizing the error compared with the original image.
+
+#### SRGAN enhancement ([source code](./models/enhancement_models/SRGAN_enhancement.ipynb))
+This method aims to estimate a high-resolution image from its low-resolution counterpart.
