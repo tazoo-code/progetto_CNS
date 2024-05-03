@@ -18,4 +18,4 @@ We developed the tool using the following strategy:
 In order to improve the quality of the images, we compared three signal processing methods for image enhancement, addressing different image processing tasks.
 
 #### MAXIM
-  [Maxim enhancement](./models/Enhancement models/MAXIM_enhancement.ipynb)
+  [Maxim enhancement](./models/enhancement_models/MAXIM_enhancement.ipynb)
