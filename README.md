@@ -25,3 +25,24 @@ This technique reduces the total variation of the picture, facilitating the remo
 
 #### SRGAN enhancement ([source code](./models/enhancement_models/SRGAN_enhancement.ipynb))
 This method aims to estimate a high-resolution image from its low-resolution counterpart.
+
+
+### Linguistic description
+The enhanced picture is described using a Vision-Language Model (VLM), to extract physical information about the subject.
+
+#### Qwen-VL ([source code](./models/VLM_models/Qwen-VL/Qwen-VL-Chat-Int4_infer_dir.ipynb))
+This small-scale VLM is composed by a pretrained vision encoder, a Vision-Language adapter, and a Large Language Model (Qwen-7B), and shows good performances on a broad range of visual-centric benchmarks.
+
+#### TinyLLaVA ([source code](./models/VLM_models/TinyLLaVa/TinyLLaVA_infer_dir.ipynb))
+The model is a small-scale large-multimodal architecture, composed by a pretrained vision encoder and a small-scale LLM, connected by a two-layer Multi-Layer Perceptron (MLP).
+
+
+
+### Image augmentation
+An Image-to-image model is used to generate new synthetic pictures of the subject, using as text prompt the information extracted in the previous phase.
+
+#### PhotoMaker ([source code](./models/generative_models/PhotoMaker.ipynb))
+This generative model produces synthetic pictures while preserving the identity of the subjects, guided through the input text prompts.
+
+
+
