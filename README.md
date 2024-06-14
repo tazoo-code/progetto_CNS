@@ -1,4 +1,4 @@
-# Te-LLM-e what you can't see
+# Te-LLM-e what you can see
 
 In the context of police investigations, since the identification of the culprit depends also on the number and the quality of images of the subject, it is important to maximize the information at disposal of law enforcement agencies.
 For this reason, we developed a forensic tool composed by pretrained models for image processing, with the aim of helping the identification of the subject.
