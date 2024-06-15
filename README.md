@@ -17,32 +17,30 @@ We developed the tool using the following strategy:
 ### Image enhancement
 In order to improve the quality of the images, we compared three signal processing methods for image enhancement, addressing different image processing tasks.
 
-#### MAXIM enhancement ([source code](./models/enhancement_models/MAXIM_enhancement.ipynb))
-This method is specialized in low-light enhancement, which is able to enhance lighting while reducing the image noise. 
+* [MAXIM enhancement](./models/enhancement_models/MAXIM_enhancement.ipynb): This method is specialized in low-light enhancement, which is able to enhance lighting while reducing the image noise. 
 
-#### Total variation denoising ([source code](./models/enhancement_models/Total_Variation_Denoising.ipynb))
-This technique reduces the total variation of the picture, facilitating the removal of unwanted details while minimizing the error compared with the original image.
+* [Total variation denoising](./models/enhancement_models/Total_Variation_Denoising.ipynb): This technique reduces the total variation of the picture, facilitating the removal of unwanted details while minimizing the error compared with the original image.
 
-#### SRGAN enhancement ([source code](./models/enhancement_models/SRGAN_enhancement.ipynb))
-This method aims to estimate a high-resolution image from its low-resolution counterpart.
+* [SRGAN enhancement](./models/enhancement_models/SRGAN_enhancement.ipynb): This method aims to estimate a high-resolution image from its low-resolution counterpart.
 
 
 ### Linguistic description
 The enhanced picture is described using a Vision-Language Model (VLM), to extract physical information about the subject.
 
-#### Qwen-VL ([source code](./models/VLM_models/Qwen-VL/Qwen-VL-Chat-Int4_infer_dir.ipynb))
-This small-scale VLM is composed by a pretrained vision encoder, a Vision-Language adapter, and a Large Language Model (Qwen-7B), and shows good performances on a broad range of visual-centric benchmarks.
+* [Qwen-VL](./models/VLM_models/Qwen-VL/Qwen-VL-Chat-Int4_infer_dir.ipynb): This small-scale VLM is composed by a pretrained vision encoder, a Vision-Language adapter, and a Large Language Model (Qwen-7B), and shows good performances on a broad range of visual-centric benchmarks.
 
-#### TinyLLaVA ([source code](./models/VLM_models/TinyLLaVa/TinyLLaVA_infer_dir.ipynb))
-The model is a small-scale large-multimodal architecture, composed by a pretrained vision encoder and a small-scale LLM, connected by a two-layer Multi-Layer Perceptron (MLP).
+* [TinyLLaVA](./models/VLM_models/TinyLLaVa/TinyLLaVA_infer_dir.ipynb): The model is a small-scale large-multimodal architecture, composed by a pretrained vision encoder and a small-scale LLM, connected by a two-layer Multi-Layer Perceptron (MLP).
 
 
 
 ### Image augmentation
 An Image-to-image model is used to generate new synthetic pictures of the subject, using as text prompt the information extracted in the previous phase.
 
-#### PhotoMaker ([source code](./models/generative_models/PhotoMaker.ipynb))
-This generative model produces synthetic pictures while preserving the identity of the subjects, guided through the input text prompts.
+* [PhotoMaker](./models/generative_models/PhotoMaker.ipynb): This generative model produces synthetic pictures while preserving the identity of the subjects, guided through the input text prompts.
 
 
+## Results
+The results of the first and third phases are collected into the [enhanced_pictures](./images/enhanced_pictures) and [Photomaker_generated_pictures](./images/Photomaker_generated_pictures) folders.
 
+The results of the first and second phases are compared using a ["semantic" Hamming distance](./results/metric_computation.ipynb), which returns an accuracy score of the predictions w.r.t. the ground truth.
+The results achieved using this method are collected into the [results](.main/results) folder.
